@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Nav/>
+      <Nav />
       <div className="HeroContainer">
         <h1>Your App Goes Here</h1>
       </div>

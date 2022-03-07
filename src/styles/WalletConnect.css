@@ -1,8 +1,26 @@
 .WalletConnect {
     width: fit-content;
-    height: 34px;
+    width: -moz-fit-content;
+    height: 38px;
     display: flex;
     align-items: center;
     padding: 0px 10px;
     border: 2px solid white;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.WalletConnect:hover {
+    cursor: pointer;
+}
+.WalletConnected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    font-weight: 300;
+}
+.Jazzicon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
