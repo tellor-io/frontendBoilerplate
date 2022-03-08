@@ -10,17 +10,20 @@ import { truncateAddr } from "../utils/helpers";
 
 function WalletConnect() {
   const user = useContext(UserContext);
+  
   useEffect(() => {
     console.log("User inside WalletConnect", user);
   }, [user])
   
   const startFlow = () => {
-    user.setConnected(true);
+    if (user) {
+      user.setConnected(true);
+    }
   };
 
   return (
     <div className="WalletConnect" onClick={() => startFlow()}>
-      {user.connected && user.currentUser ?
+      {user && user.currentUser ?
         (
         <div className="WalletConnected">
           <Jazzicon 

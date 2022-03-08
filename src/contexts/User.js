@@ -27,10 +27,10 @@ const tellorAddressMainnet = "0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0";
 
 const User = ({ children }) => {
     //Context State
-    const [currentNetwork, setCurrentNetwork] = useState(null);
     const [currentUser, setCurrentUser] = useState(null);
     const [connected, setConnected] = useState(false);
     const [setupUserError, setSetupUserError] = useState(null);
+    const [eventsOn, setEventsOn] = useState(false);
     
     //Helpers
     const getAssetBalances = async (web3, address) => {
@@ -58,7 +58,7 @@ const User = ({ children }) => {
             user.network = chains[chainId];
             user.chainId = chainId;
             user.balances = (chainId === 1 || chainId === 4) ? (await getAssetBalances(user.web3, user.address)) : null;
-            return [chainId, user];
+            return user;
         } catch (err) {
             console.log(err);
             setSetupUserError(err.message);
@@ -71,67 +71,42 @@ const User = ({ children }) => {
         if (web3Modal && connected) {
             web3Modal.clearCachedProvider();
             setupUser().then(res => {
-                setCurrentNetwork(res[0])
-                setCurrentUser(res[1])
+                setCurrentUser(res);
             })
+            setEventsOn(true);
         }
+    }, [connected]) //eslint-disable-line
 
-        // return () => {
-        //     console.log(currentUser);
-        //     if(currentUser != null) return;
-        //     setCurrentNetwork(null);
-        //     setCurrentUser(null);
-        // };
-    }, [connected])
-
-    //useEffect listening to events
-    useEffect(() => {
-        if (currentUser) {
-            // Subscribe to chains change
-            currentUser.provider.on("chainChanged", () => {
+    //Turning on events subscription 
+    //ONLY on first web3 injection 
+    // (the above useEffect),
+    //to prevent memory leaks and
+    //keep event listeners cleaned up.
+    if (currentUser && eventsOn) {
+        // Subscribe to chains change
+        window.ethereum.on("chainChanged", () => {
+            setupUser().then(res => {
+                setCurrentUser(res);
+            })
+        });
+        // Subscribe to accounts change
+        window.ethereum.on("accountsChanged", async (accounts) => {
+            if (accounts.length === 0) {
+                web3Modal.clearCachedProvider();
+            } else {
                 setupUser().then(res => {
-                    setCurrentNetwork(res[0]);
-                    setCurrentUser(res[1]);
-                })
-            });
-            // Subscribe to accounts change
-            currentUser.provider.on("accountsChanged", async (accounts) => {
-                if (accounts.length === 0) {
-                    web3Modal.clearCachedProvider();
-                } else {
-                    setupUser().then(res => {
-                        setCurrentNetwork(res[0])
-                        setCurrentUser(res[1])
-                    });
-                }
-            });
-        }
-        // return () => {
-        //     if(currentUser != null) return;
-        //     setCurrentNetwork(null);
-        //     setCurrentUser(null);
-        // };
-    }, [currentUser])
-
-    // useEffect(() => {
-    //     if (currentUser && +currentUser.network !== +currentNetwork) {
-    //         setupUser().then(res => {
-    //             setCurrentNetwork(res[0])
-    //             setCurrentUser(res[1])
-    //         });
-    //     }
-    // }, [currentUser, currentNetwork])
-
-    // console.log("currentNetwork", currentNetwork);
-    // console.log("currentUser", currentUser);
-
+                    setCurrentUser(res);
+                });
+            }
+        });
+        setEventsOn(false);
+    }
+    
     const UserContextObject = {
-        currentNetwork: currentNetwork,
         currentUser: currentUser,
         connected: connected,
         setupUserError: setupUserError,
         setConnected: setConnected,
-        setCurrentNetwork: setCurrentNetwork,
         setCurrentUser: setCurrentUser,
         setupUser: setupUser,
     }
