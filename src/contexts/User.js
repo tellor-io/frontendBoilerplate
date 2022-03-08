@@ -76,13 +76,13 @@ const User = ({ children }) => {
             })
         }
 
-        return () => {
-            console.log(currentUser);
-            if(currentUser != null) return;
-            setCurrentNetwork(null);
-            setCurrentUser(null);
-        };
-    }, [connected, currentNetwork, currentUser])
+        // return () => {
+        //     console.log(currentUser);
+        //     if(currentUser != null) return;
+        //     setCurrentNetwork(null);
+        //     setCurrentUser(null);
+        // };
+    }, [connected])
 
     //useEffect listening to events
     useEffect(() => {
@@ -113,14 +113,14 @@ const User = ({ children }) => {
         // };
     }, [currentUser])
 
-    useEffect(() => {
-        if (currentUser && +currentUser.network !== +currentNetwork) {
-            setupUser().then(res => {
-                setCurrentNetwork(res[0])
-                setCurrentUser(res[1])
-            });
-        }
-    }, [currentUser, currentNetwork])
+    // useEffect(() => {
+    //     if (currentUser && +currentUser.network !== +currentNetwork) {
+    //         setupUser().then(res => {
+    //             setCurrentNetwork(res[0])
+    //             setCurrentUser(res[1])
+    //         });
+    //     }
+    // }, [currentUser, currentNetwork])
 
     // console.log("currentNetwork", currentNetwork);
     // console.log("currentUser", currentUser);

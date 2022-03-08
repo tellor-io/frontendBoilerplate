@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 //Contexts
 import { UserContext } from "../contexts/User";
 //Styles
@@ -10,8 +10,10 @@ import { truncateAddr } from "../utils/helpers";
 
 function WalletConnect() {
   const user = useContext(UserContext);
-  console.log("User inside WalletConnect", user);
-
+  useEffect(() => {
+    console.log("User inside WalletConnect", user);
+  }, [user])
+  
   const startFlow = () => {
     user.setConnected(true);
   };
