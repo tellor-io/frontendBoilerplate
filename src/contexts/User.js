@@ -1,7 +1,7 @@
 import React, { useState, createContext, useEffect } from 'react';
 //Utils
 import chains from "../utils/chains";
-import minABI from "../utils/minimumABI.json"
+import { getAssetBalances } from "../utils/helpers";
 //Web3
 import Web3 from 'web3';
 import Web3Modal from 'web3modal';
@@ -22,8 +22,6 @@ const web3Modal = new Web3Modal({
     providerOptions, // required
     cacheProvider: true,
 });
-//Globals
-const tellorAddressMainnet = "0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0";
 
 const User = ({ children }) => {
     //Context State
@@ -32,22 +30,6 @@ const User = ({ children }) => {
     const [setupUserError, setSetupUserError] = useState(null);
     const [eventsOn, setEventsOn] = useState(false);
     
-    //Helpers
-    const getAssetBalances = async (web3, address) => {
-        //Instantiating Contracts
-        const trbContract = new web3.eth.Contract(minABI, tellorAddressMainnet);
-        //Main Chain Balance
-        const ethBalance = web3.utils.fromWei(await web3.eth.getBalance(address));
-        const trbBalance = await trbContract.methods
-          .balanceOf(address)
-          .call()
-          .then((res) => web3.utils.fromWei(res));
-        //Add more assets here if needed
-        return {
-            eth: Math.round(ethBalance * 100) / 100,
-            trb: Math.round(trbBalance * 100) / 100,
-        };
-      };
     const setupUser = async () => {
         try {
             let user = { web3Modal: web3Modal };
@@ -57,7 +39,7 @@ const User = ({ children }) => {
             user.address = (await user.web3.eth.getAccounts())[0];
             user.network = chains[chainId];
             user.chainId = chainId;
-            user.balances = (chainId === 1 || chainId === 4) ? (await getAssetBalances(user.web3, user.address)) : null;
+            user.balances = await getAssetBalances(user.web3, user.address, chainId);
             return user;
         } catch (err) {
             console.log(err);
