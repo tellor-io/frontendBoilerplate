@@ -57,7 +57,7 @@ const User = ({ children }) => {
             user.address = (await user.web3.eth.getAccounts())[0];
             user.network = chains[chainId];
             user.chainId = chainId;
-            user.balances = chainId === 1 || chainId === 4 ? (await getAssetBalances(user.web3, user.address)) : null;
+            user.balances = (chainId === 1 || chainId === 4) ? (await getAssetBalances(user.web3, user.address)) : null;
             return [chainId, user];
         } catch (err) {
             console.log(err);
@@ -75,8 +75,14 @@ const User = ({ children }) => {
                 setCurrentUser(res[1])
             })
         }
-        return () => {};
-    }, [connected])
+
+        return () => {
+            console.log(currentUser);
+            if(currentUser != null) return;
+            setCurrentNetwork(null);
+            setCurrentUser(null);
+        };
+    }, [connected, currentNetwork, currentUser])
 
     //useEffect listening to events
     useEffect(() => {
@@ -100,14 +106,21 @@ const User = ({ children }) => {
                 }
             });
         }
-        return () => {};
+        // return () => {
+        //     if(currentUser != null) return;
+        //     setCurrentNetwork(null);
+        //     setCurrentUser(null);
+        // };
     }, [currentUser])
 
-    // useEffect(() => {
-    //     if (currentUser && +currentUser.network !== +currentNetwork) {
-    //         resetUser(setCurrentUser)
-    //     }
-    // }, [currentUser, currentNetwork])
+    useEffect(() => {
+        if (currentUser && +currentUser.network !== +currentNetwork) {
+            setupUser().then(res => {
+                setCurrentNetwork(res[0])
+                setCurrentUser(res[1])
+            });
+        }
+    }, [currentUser, currentNetwork])
 
     // console.log("currentNetwork", currentNetwork);
     // console.log("currentUser", currentUser);

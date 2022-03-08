@@ -17,7 +17,7 @@ function WalletConnect() {
   };
 
   return (
-    <div className="WalletConnect" onClick={startFlow}>
+    <div className="WalletConnect" onClick={() => startFlow()}>
       {user.connected && user.currentUser ?
         (
         <div className="WalletConnected">

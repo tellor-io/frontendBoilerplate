@@ -1,5 +1,6 @@
 .WalletConnect {
-    width: fit-content;
+    min-width: 100px;
+    max-width: fit-content;
     width: -moz-fit-content;
     height: 38px;
     display: flex;
