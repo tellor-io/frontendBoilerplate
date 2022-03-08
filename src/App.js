@@ -1,7 +1,7 @@
 import React from "react";
 //Components
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+import Nav from "./components/frontendBoilerplate/Nav";
+import Footer from "./components/frontendBoilerplate/Footer";
 //Styles
 import './App.css';
 

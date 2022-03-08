@@ -12,3 +12,13 @@
     color: #777777;
     margin-left: 28px;
 }
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .Footer {
+        justify-content: center; 
+    }
+    .FooterText {
+        margin-left: 0;
+    }
+}

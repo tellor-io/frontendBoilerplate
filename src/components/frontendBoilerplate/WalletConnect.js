@@ -1,21 +1,27 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 //Contexts
-import { UserContext } from "../contexts/User";
+import { UserContext } from "../../contexts/User";
 //Styles
-import "../styles/WalletConnect.css";
+import "../../styles/frontendBoilerplate/WalletConnect.css";
 //Icons
 import { Jazzicon } from "@ukstv/jazzicon-react";
 import { CustomTooltip } from "./CustomTooltip";
 //Utils
-import { truncateAddr } from "../utils/helpers";
+import { truncateAddr } from "../../utils/helpers";
+import { useMediaQuery } from "react-responsive";
 
 function WalletConnect() {
+  //Context Data
   const user = useContext(UserContext);
+  //Component State
   const [showTooltip, setShowTooltip] = useState(false);
+  //Media Queries
+  const tooltipAlign = useMediaQuery({ query: "(max-width: 850px)" });
   
-  useEffect(() => {
-    console.log("User inside WalletConnect", user);
-  }, [user])
+  //COMMENT IN FOR DEBUGGING PURPOSES
+  // useEffect(() => {
+  //   console.log("User inside WalletConnect", user);
+  // }, [user])
   
   const startFlow = () => {
     if (user) {
@@ -40,7 +46,7 @@ function WalletConnect() {
                 : 
                 "To switch accounts or networks, use Metamask extension."
               }
-            placement="right"
+            placement={tooltipAlign ? "bottom" : "right"}
             arrow
           >
             <div 
@@ -59,7 +65,6 @@ function WalletConnect() {
       : 
         (<p>connect wallet</p>)
       }
-      
     </div>
   )
 }
