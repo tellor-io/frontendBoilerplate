@@ -9,7 +9,13 @@ import "../../styles/frontendBoilerplate/Nav.css";
 function Nav() {
   return (
     <div className="Nav">
-      <Tellor className="TellorLogo"/>
+      <a 
+        href="https://tellor.io/"
+        alt="https://tellor.io/"
+        rel="noopener noreferrer"
+      >
+        <Tellor className="TellorLogo"/>
+      </a>
       <WalletConnect />
     </div>
   )
