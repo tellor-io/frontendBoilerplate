@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 //Contexts
 import { UserContext } from "../../contexts/User";
 //Styles
@@ -22,6 +22,17 @@ function WalletConnect() {
   // useEffect(() => {
   //   console.log("User inside WalletConnect", user);
   // }, [user])
+
+  //In case user exits MetaMask or Walletconnect
+  //Halfway through login process
+  useEffect(() => {
+    if (!user) return;
+    if (user.setupUserError === "User closed modal" || user.setupUserError === "User Rejected") 
+    {
+      user.setConnected(false);
+      user.setSetupUserError(null);
+    }
+  }, [user])
   
   const startFlow = () => {
     if (user) {
