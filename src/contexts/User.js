@@ -42,7 +42,7 @@ const User = ({ children }) => {
             user.balances = await getAssetBalances(user.web3, user.address, chainId);
             return user;
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             setSetupUserError(err.message);
         }
     };
@@ -51,6 +51,8 @@ const User = ({ children }) => {
     //sets up user and network
     useEffect(() => {
         if (web3Modal && connected) {
+            //if check for when user stops login flow
+            if (currentUser !== undefined && currentUser !== null) return;
             web3Modal.clearCachedProvider();
             setupUser().then(res => {
                 setCurrentUser(res);
@@ -59,9 +61,21 @@ const User = ({ children }) => {
         }
     }, [connected]) //eslint-disable-line
 
+    //useEffect that checks for when user stops login flow,
+    //and resets.
+    useEffect(() => {
+        if (currentUser === undefined) {
+            setConnected(false);
+        } else if (currentUser === undefined && connected) {
+            setConnected(false);
+        } else if (currentUser !== undefined && currentUser !== null) {
+            setConnected(true);
+        }
+    }, [currentUser, connected])
+
     //Turning on events subscription 
     //ONLY on first web3 injection 
-    // (the above useEffect),
+    // (the "connected = true" useEffect),
     //to prevent memory leaks and
     //keep event listeners cleaned up.
     if (currentUser && eventsOn) {
@@ -88,8 +102,9 @@ const User = ({ children }) => {
         currentUser: currentUser,
         connected: connected,
         setupUserError: setupUserError,
-        setConnected: setConnected,
         setCurrentUser: setCurrentUser,
+        setConnected: setConnected,
+        setSetupUserError: setSetupUserError,
         setupUser: setupUser,
     }
 
