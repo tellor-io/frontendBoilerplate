@@ -33,7 +33,11 @@ function Footer() {
             : 'Switch to Dark Mode'}
         </p>
         <ThemeProvider theme={theme}>
-          <CustomSwitch {...label} defaultChecked onClick={mode.changeMode} />
+          <CustomSwitch
+            {...label}
+            checked={mode && mode.mode === 'dark' ? true : false}
+            onClick={mode.changeMode}
+          />
         </ThemeProvider>
       </div>
     </div>
