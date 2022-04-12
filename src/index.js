@@ -1,14 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import User from './contexts/User';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import User from './contexts/User'
+import Mode from './contexts/Mode'
 
 ReactDOM.render(
-    <User>
+  <User>
+    <Mode>
       <App />
-    </User>
-  ,
+    </Mode>
+  </User>,
   document.getElementById('root')
-);
-
+)
