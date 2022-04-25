@@ -154,12 +154,15 @@ Contributions are what make the open source community such an amazing place to b
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- CONTACT -->
 ## Contact
 
-Tellor.io - [@WeAreTellor](https://twitter.com/WeAreTellor)
+Tellor.io 
+- [Documentation](https://docs.tellor.io/tellor/)
+- [Twitter](https://twitter.com/WeAreTellor)
+- [Discord](https://discord.gg/NP7fmzr5)
+- [GitHub](https://github.com/tellor-io)
+- [YouTube](https://www.youtube.com/tellor)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
