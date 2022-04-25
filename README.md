@@ -185,9 +185,9 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
+[contributors-url]: https://github.com/tellor-io/frontendBoilerplate/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo/network/members
+[forks-url]: https://github.com/tellor-io/frontendBoilerplate/network/members
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
 [stars-url]: https://github.com/github_username/repo/stargazers
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
