@@ -104,7 +104,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* This app requires node version 16.14.0 in order to run.
+* This app requires node version **16.14.0** in order to run.
 * We suggest installing nvm globally
   ```sh
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
