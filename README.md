@@ -81,8 +81,7 @@
 
 [![Product Name Screen Shot][screenshot]](https://github.com/tellor-io/frontendBoilerplate)
 
-The idea behind the frontend boilerplate is to cut down development time, by creating a reusable module that contains helpful web3 frontend capabilities. 
-This includes, but is not limited to: 
+The idea behind the frontend boilerplate is to cut down development time, by creating a reusable module that contains helpful, necessary and reoccurring web3 frontend capabilities. This includes, but is not limited to: 
 
 * MetaMask/WalletConnect connectivity
 * Light/Dark Mode
@@ -144,9 +143,14 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Use this project to quickly spin up new Tellor frontends! Below is an example of Tellor apps that use this template: 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+<div>
+  <img src="https://user-images.githubusercontent.com/21370350/165304994-7ee7a9cc-0ac3-459b-afc0-b533c8de4240.png" alt="Logo" width="120" height="120">
+  <img src="https://user-images.githubusercontent.com/21370350/165304921-9366d525-4443-4b2b-81e5-7e6923d92956.png" alt="Logo" width="120" height="120">
+  <img src="https://user-images.githubusercontent.com/21370350/165305095-9c6f2d3d-2d23-4a81-a146-ac10c6b19848.png" alt="Logo" width="120" height="120">
+</div>
+
 
 
 <!-- ROADMAP -->
