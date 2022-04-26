@@ -79,7 +79,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://capture.dropbox.com/pN7tOjt70n68b2rO)
+[![Product Name Screen Shot][screenshot]](https://github.com/tellor-io/frontendBoilerplate)
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
@@ -179,6 +179,7 @@ Tellor.io
 - [YouTube](https://www.youtube.com/tellor)
 
 <!-- ACKNOWLEDGEMENTS -->
+
 ## Acknowledgements
 
 * [README Acknowledgement](https://github.com/othneildrew/Best-README-Template)
@@ -195,3 +196,4 @@ Tellor.io
 [issues-url]: https://github.com/tellor-io/frontendBoilerplate/issues
 [license-shield]: https://img.shields.io/github/license/tellor-io/frontendBoilerplate.svg?style=for-the-badge
 [license-url]: https://github.com/tellor-io/frontendBoilerplate/blob/main/LICENSE.txt
+[screenshot]: https://user-images.githubusercontent.com/21370350/165222959-8581c860-1bf0-425e-aa05-500c530a2567.png
