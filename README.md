@@ -81,18 +81,20 @@
 
 [![Product Name Screen Shot][screenshot]](https://github.com/tellor-io/frontendBoilerplate)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+The idea behind the frontend boilerplate is to cut down development time, by creating a reusable module that contains helpful web3 frontend capabilities. 
+This includes, but is not limited to: 
 
+* MetaMask/WalletConnect connectivity
+* Light/Dark Mode
+* Consistent Nav Bar and Footer
 
 ### Built With
 
-* []()
-* []()
-* []()
-
-
+* [React](https://reactjs.org/)
+* [web3](https://web3js.readthedocs.io/en/v1.7.3/)
+* [ethers.js](https://docs.ethers.io/v5/)
+* [jazzicon-react](https://www.npmjs.com/package/@ukstv/jazzicon-react)
+* [Material UI](https://mui.com/material-ui/getting-started/installation/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
