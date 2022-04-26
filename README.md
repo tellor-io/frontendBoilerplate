@@ -85,7 +85,7 @@ The idea behind the frontend boilerplate is to cut down development time, by cre
 
 * MetaMask/WalletConnect connectivity
 * Light/Dark Mode
-* Consistent Nav Bar and Footer
+* Consistent Navbar and Footer
 
 ### Built With
 
