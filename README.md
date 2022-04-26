@@ -37,7 +37,7 @@
   <h2 align="center">Tellor Frontend Boilerplate</h2>
 
   <p align="center">
-    This project is a GitHub template used to quickstart Tellor Frontends. To add more features so all Tellor web3 apps can share the functionality, click on 'Request Feature' below and be sure to detail your specs. 
+    This project is a GitHub template used to quickly start up Tellor Frontends. To add more features so all Tellor web3 apps can share the functionality, click on 'Request Feature' below and be sure to detail your specs. 
     <br />
     <br />
     <a href="https://github.com/tellor-io/frontendBoilerplate/issues">Report Bug</a>
