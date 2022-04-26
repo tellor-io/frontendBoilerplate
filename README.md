@@ -87,6 +87,8 @@ The idea behind the frontend boilerplate is to cut down development time, by cre
 * Light/Dark Mode
 * Consistent Navbar and Footer
 
+A .prettierrc.js file is included so that if you use the prettier extension, you can set your settings in your text editor to only format on save if this file is present. This way you can keep your formatting preferences unique to your local machine and only affect repos that contain a file like this. This keeps other projects in Tellor.io with whatever formatting is unique to the developers working on them. 
+
 ### Built With
 
 * [React](https://reactjs.org/)
@@ -146,9 +148,9 @@ To get a local copy up and running follow these simple steps.
 Use this project to quickly spin up new Tellor frontends! Below are some examples of Tellor apps that use this template: 
 
 <div>
-  <img src="https://user-images.githubusercontent.com/21370350/165304994-7ee7a9cc-0ac3-459b-afc0-b533c8de4240.png" alt="Logo" width="30%" height="100%">
-  <img src="https://user-images.githubusercontent.com/21370350/165304921-9366d525-4443-4b2b-81e5-7e6923d92956.png" alt="Logo" width="30%" height="100%">
-  <img src="https://user-images.githubusercontent.com/21370350/165305095-9c6f2d3d-2d23-4a81-a146-ac10c6b19848.png" alt="Logo" width="30%" height="100%">
+  <img src="https://user-images.githubusercontent.com/21370350/165304994-7ee7a9cc-0ac3-459b-afc0-b533c8de4240.png" alt="Project example" width="30%" height="100%">
+  <img src="https://user-images.githubusercontent.com/21370350/165304921-9366d525-4443-4b2b-81e5-7e6923d92956.png" alt="Project example" width="30%" height="100%">
+  <img src="https://user-images.githubusercontent.com/21370350/165305095-9c6f2d3d-2d23-4a81-a146-ac10c6b19848.png" alt="Project example" width="30%" height="100%">
 </div>
 
 <!-- ROADMAP -->
