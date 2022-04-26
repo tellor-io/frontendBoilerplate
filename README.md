@@ -120,7 +120,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repo in your preferred directory
    ```sh
    git clone https://github.com/tellor-io/frontendBoilerplate.git
    ```
@@ -136,7 +136,7 @@ To get a local copy up and running follow these simple steps.
    ```sh
    Now using node v16.14.0 (npm v8.3.1)
    ```
-4. Spin up development server
+4. Spin up your local development server
    ```sh
    npm start
    ```
