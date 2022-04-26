@@ -146,9 +146,9 @@ To get a local copy up and running follow these simple steps.
 Use this project to quickly spin up new Tellor frontends! Below is an example of Tellor apps that use this template: 
 
 <div>
-  <img src="https://user-images.githubusercontent.com/21370350/165304994-7ee7a9cc-0ac3-459b-afc0-b533c8de4240.png" alt="Logo" width="120" height="120">
-  <img src="https://user-images.githubusercontent.com/21370350/165304921-9366d525-4443-4b2b-81e5-7e6923d92956.png" alt="Logo" width="120" height="120">
-  <img src="https://user-images.githubusercontent.com/21370350/165305095-9c6f2d3d-2d23-4a81-a146-ac10c6b19848.png" alt="Logo" width="120" height="120">
+  <img src="https://user-images.githubusercontent.com/21370350/165304994-7ee7a9cc-0ac3-459b-afc0-b533c8de4240.png" alt="Logo" width="200" height="180">
+  <img src="https://user-images.githubusercontent.com/21370350/165304921-9366d525-4443-4b2b-81e5-7e6923d92956.png" alt="Logo" width="200" height="180">
+  <img src="https://user-images.githubusercontent.com/21370350/165305095-9c6f2d3d-2d23-4a81-a146-ac10c6b19848.png" alt="Logo" width="200" height="180">
 </div>
 
 
