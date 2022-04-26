@@ -101,23 +101,43 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+* This app requires node version 16.14.0 in order to run.
+* We suggest installing nvm globally
   ```sh
-  npm install npm@latest -g
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  ```
+* Check nvm version after install
+  ```sh
+  nvm -v 
+  ```
+  Ex:
+  ```sh
+  0.39.1
   ```
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/tellor-io/frontendBoilerplate.git
+   ```
    ```
 2. Install NPM packages
    ```sh
    npm install
    ```
-
+3. Change node version to 16.14.0
+   ```sh
+   nvm use v16.14.0
+   ```
+   Output:
+   ```sh
+   Now using node v16.14.0 (npm v8.3.1)
+   ```
+4. Spin up development server
+   ```sh
+   npm start
+   ```
 
 
 <!-- USAGE EXAMPLES -->
@@ -128,13 +148,10 @@ Use this space to show useful examples of how a project can be used. Additional 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 
-
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
-
-
+See the [open issues](https://github.com/tellor-io/frontendBoilerplate/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -146,8 +163,6 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-
 
 <!-- LICENSE -->
 ## License
